@@ -1,3 +1,6 @@
+import sys
+
+sys.path.append("/Users/allen/Code_git/Master_Capstone_Project/Project/Code/google cloud")
 from qrcode import QRcode
 from imageprocessing import ImageProcessing
 from CNN import DataGenerator, MobileNet
@@ -29,16 +32,21 @@ class analysis:
         # waste food dictionary key = label:str  value = [cnt:int,weight:int]
         waste_dishes = {}
         for root, dirs, files_list in os.walk(img_path):
+            files_list.sort()
             for file_name in files_list:  # file 是单个文件名：
+
                 if file_name.endswith(".jpg") or file_name.endswith(".JPG"): # filter file only JPG get into
                     """
                     pick up a single file
                     """
+
                     file_path = os.path.join(root, file_name)  # 这个函数return的是一个string
                     # 获取QRcode，return的是个str
                     try:
+                        # qrcode = 10
                         qrcode = QRcode.decode(file_path)   # qrcode 是str
-                    except:continue
+                    except:
+                        continue
                     cur_weight = int(file_name.split("%%")[-1].split(".")[0])
                     '''
                     qrcode is the first time or second
