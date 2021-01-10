@@ -1,0 +1,7 @@
+The basic operating enviroment is JAVA 8.0 and Python 3.7. 
+Two other necessary visualization packages are required, named jcommon-1.0.23 and jfreechart-1.0.19.
+The secret key file that connects to the cloud must be referenced correctly.
+
+The entry of the GUI is Main.
+
+The code file is packaged as an EXE file that can be executed with the full environment. But the place where the reference location is designed in the code needs to be slightly modified.

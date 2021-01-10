@@ -1,3 +1,5 @@
+# -*- coding: iso-8859-15 -*-
+
 from google.cloud import storage
 import os
 
@@ -6,7 +8,7 @@ class Download:
 
         ################          这个地址你要改成你自己存放密匙的地址    ###################
         storage_client = storage.Client.from_service_account_json(
-            "/Users/allen/Code_git/Master_Capstone_Project/Project/google cloud/My First Project-7b0d2811365a.json")
+            "D:\WasteXero2.0\My First Project-7b0d2811365a.json")
         ################################################################################
 
         bucket = storage_client.bucket(bucket_name)
@@ -38,9 +40,8 @@ class Download:
 
 if __name__ == "__main__":
     d = Download()
-
     # step 1 设置本地地址
-    local_path = "/Users/allen/Desktop/temp/"  #本地存储文件夹位置，地址一定以 "/" 作为末尾
+    local_path = "D:/WasteXero2.0/"  #本地存储文件夹位置，地址一定以 "/" 作为末尾
 
     # create dir under this root
     root = local_path + "csv_file/"
